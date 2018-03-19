@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>sample-security-rest</groupId>
+	<artifactId>sample-security-servlet</artifactId>
+	<version>1.0.0.0</version>
+	<name>sample-security-servlet</name>
+
+	<packaging>war</packaging>
+
+	<properties>
+		<javaee.version>7.0</javaee.version>
+		<java.version>1.7</java.version>
+		<wildfly.version>10.0.0.Final</wildfly.version>
+		<javaee-api.version>7.0</javaee-api.version>
+	</properties>
+
+	<dependencies>
+		<!-- Scope Compile -->
+		<dependency>
+			<groupId>sample-security-rest</groupId>
+			<artifactId>sample-security-rest-entities</artifactId>
+			<version>1.0.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>sample-security-rest</groupId>
+			<artifactId>sample-security-rest</artifactId>
+			<version>1.0.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+			<!-- redhat <version>2.5.0.redhat-2</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+			<!-- redhat <version>1.10.0.redhat-5</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+			<!-- redhat <version>3.4.0.redhat-003</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+			<!-- redhat <version>1.9.13.redhat-4</version>-->
+		</dependency>
+
+		<!-- Scope Provided -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javaee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>provided</scope>
+			<version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>sample-security-servlet</finalName>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

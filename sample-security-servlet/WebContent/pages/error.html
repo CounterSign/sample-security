@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang=pt-BR>
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+
+<title>COUNTERSIGN - SECURITY - SERVLET - SAMPLE</title>
+
+	<meta name="description" content="">
+	
+	<meta property="og:title" content="COUNTERSIGN - SECURITY - SERVLET - SAMPLE">
+	<meta property="og:description" content="">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="500">
+	<meta property="og:image:height" content="300">
+	
+	<link rel="canonical" href="">
+	<link rel="icon" type="image/png" href="">
+	
+	<link href='//fonts.googleapis.com/css?family=Open Sans:400,600,700|Roboto:400,700|Ubuntu:400,500|Open Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="http://www.countersign.com.br/assets/criadordesites.css?55963d1d-22e9-4ec2-ab22-cfbc09bf0145">
+	
+	<style type="text/css">
+		.cs-section[id="5122bceb-560a-48c2-95dd-a56a5bccb8f7"] {
+			min-height: 541px;
+		}
+		
+		.cs-section[id="5122bceb-560a-48c2-95dd-a56a5bccb8f7"] .cs-section-inner
+			{
+			min-height: 541px;
+			background-color: #ffca4f;
+		}
+		
+		.cs-section[id="144fd970-23c8-4728-bafa-e1ad309874da"] {
+			min-height: 697px;
+		}
+		
+		.cs-section[id="144fd970-23c8-4728-bafa-e1ad309874da"] .cs-section-inner
+			{
+			min-height: 697px;
+			background-color: rgba(255, 255, 255, 0);
+		}
+		
+		.cs-section[id="94348a57-2562-4373-9603-c2a0ff2fcfc7"] {
+			min-height: 145px;
+		}
+		
+		.cs-section[id="94348a57-2562-4373-9603-c2a0ff2fcfc7"] .cs-section-inner
+			{
+			min-height: 145px;
+			background-color: #ffca4f;
+		}
+		
+		.cs-box[id="2acba248-4ea3-436a-b48b-762ae19ac8ae"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="132aff80-0ab3-498a-9556-ec08ac7d2960"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="09e0726f-12b6-45c3-9244-38173192f255"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="1208b5fa-543b-4541-85f9-e5819b48db54"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="d4f2444a-8b24-45ec-86c8-79b054cf2c5e"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="d59b4f76-e747-41c9-baa6-bbd1ae3101c8"] {
+			flex-grow: 1;
+		}
+		
+		.cs-box[id="85b10597-a616-4ffc-a0f8-803833ee5ccc"] {
+			flex-grow: 1;
+		}
+		
+		.cs-widget[id="50acb95e-e051-4a04-a480-d5699b7f44fe"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="e92aaa62-dfd8-4706-8abc-b3451ca489d3"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="a3e8ed7e-025f-411c-9ff0-4887952581fa"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="a225d493-024b-4907-943f-f5fb5cda5502"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="f34caa5a-e032-4f71-8602-be8bbd044e42"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="a7e15ffb-cb9c-4f16-8a59-fad89670676a"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="0b049257-cee5-41f1-b96a-deb82967c2ba"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="5ae789b5-05d9-47f5-a1cb-c63a140a0c62"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="2d8e7d13-efeb-4056-b761-c1aa20713c38"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="fb82c50c-6da9-4b38-97de-ed94d3bd720e"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="6674b030-9eeb-4be9-aa1b-9b7413dd02d9"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="ba26f117-16f3-4521-b8f3-8e88d66cbb8f"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="87d60429-271f-4bbc-9e5b-ad6aa57cba63"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="449326c0-b93e-4dc2-b69f-1d8cf321c218"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="80f65326-fea4-4717-861a-952237ab0fcd"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="7a33ab6d-b319-4f97-9a7c-715bd3a0851f"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="9a6b3817-593e-4265-9b99-70b4f82461e0"] {
+			background-color: transparent;
+		}
+		
+		.cs-widget[id="f6959a1f-4719-4403-a734-75a3cb867659"] {
+			background-color: transparent;
+		}
+
+		.cs-table {
+		    font-family: arial, sans-serif;
+		    font-size: 12px;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		td, th {
+		    border: 1px solid #dddddd;
+		    text-align: left;
+		    padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+		
+	</style>
+	
+</head>
+
+<body class="cs-main">
+
+	<script type="text/javascript">
+		function submitForm() {
+			document.getElementById("frm").submit();
+		}
+	</script>
+
+	<div class="cs-page">
+		<header id="2809850a-9bae-4164-bee0-10f2adfcd6eb" class="cs-section cs-section-full cs-section-vertical">
+			<div class="cs-section-inner">
+				<div class="cs-lines">
+					<div id="cbd81b48-3509-4261-8e9b-dd5bcbd48a2b" class="cs-line">
+						<div class="cs-boxes">
+							<div id="13508261-23c1-4087-a6b0-555e6715a9da" class="cs-box">
+								<div class="cs-widgets">
+									<div id="84dff42a-310e-4fb1-81b9-d3dfc0e14bbb" class="cs-widget cs-text-widget">
+										<div class="text-editor">
+											<p>COUNTERSIGN</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div id="96b7a906-d2eb-4122-bb04-b149d41eac88" class="cs-box">
+								<div class="cs-widgets">
+ 									<div id="5c0ce8f9-6747-41cb-a43e-80c5366c9a57" class="cs-widget cs-image-widget">
+ 										<img class="cs-chosen-image"
+											src="https://yata.ostr.locaweb.com.br/71521c68ed90067a8ffd24a1e4f4e59210e10bf05a2d6c5dd75fccb2e2aa2918"
+											title="if_General_-_Office_06_1471123.png"
+											alt="if_General_-_Office_06_1471123.png" />
+ 									</div>
+ 								</div>
+							</div>
+
+ 							<div id="ea82cf14-25e6-4070-b4eb-91e598ee250f" class="cs-box">
+								<div class="cs-widgets">
+									<p style="font: Arial; font-size: 12px; color: #ffffff;">Digital Signature Java Servlet Sample</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section id="centralText" class="cs-section cs-section-full cs-section-vertical">
+			<div class="cs-section-inner">
+				<div class="cs-lines">
+					<div id="centralTextTitle" class="cs-widget cs-text-widget">
+						<div class="text-editor">
+							<p>
+								<span style="font-size: 18px"><span style="color: #ff757c"><strong>Digital Signature Java Servlet Sample | ERROR</strong></span></span>
+							</p>
+						</div>
+					</div>
+
+
+					<form id="frm" name="frm" action="./SignStep4" method="post">
+						<input type="hidden" id="signedData" name="signedData" value="[signedData]"/>
+						<div id="centralTextSubTitle" class="cs-widget cs-text-widget">
+							<div class="text-editor">
+								<p>Ooops!</p>
+								<p>Some error occur while processing the digital signature:</p>
+								<br/>
+								<br/>
+								<p><span style="color: #696969"><strong>[error]</strong></span></p>
+								<br/>
+							</div>
+						</div>
+						<br/>
+						<br/>
+						<a href="./pages/index.html">Start again</a>
+						<br/>
+						<br/>
+					</form>
+				
+				</div>
+			</div>
+		</section>
+
+		<section id="5122bceb-560a-48c2-95dd-a56a5bccb8f7" class="cs-section cs-section-full cs-section-vertical">
+			<div class="cs-section-inner">
+				<div class="cs-lines">
+					<div id="df21a1bb-7dcd-48ec-9702-291a2a5b3166" class="cs-line">
+						<div class="cs-boxes">
+							<div id="09e0726f-12b6-45c3-9244-38173192f255" class="cs-box">
+								<div class="cs-widgets">
+									<div id="a7e15ffb-cb9c-4f16-8a59-fad89670676a" class="cs-widget cs-text-widget">
+										<div class="text-editor">
+											<p style="margin-left: 40px; text-align: center">&nbsp;</p>
+											<p style="margin-left: 40px; text-align: center">
+												<span style="color: #ffffff"><span style="font-size: 36px">CounterSign</span></span>
+											</p>
+											<p style="margin-left: 40px; text-align: center">
+												<span style="color: #ffffff"><span style="font-size: 36px">Solutions for a safer digital world</span></span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="4a58ef83-11b8-4170-b948-5c13520fad36" class="cs-line">
+						<div class="cs-boxes">
+							<div id="1208b5fa-543b-4541-85f9-e5819b48db54" class="cs-box">
+								<div class="cs-widgets">
+									<div id="0b049257-cee5-41f1-b96a-deb82967c2ba" class="cs-widget cs-image-widget">
+										<img class="cs-chosen-image" src="https://yata.ostr.locaweb.com.br/fba5a6e63214586bcaa8d0dc3f3227871fa4797851d5356e300a1c9377b700e8"
+											title="computador-home.png" alt="computador-home.png" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+
+		<section id="94348a57-2562-4373-9603-c2a0ff2fcfc7"
+			class="cs-section cs-section-full cs-section-vertical">
+			<div class="cs-section-inner">
+				<div class="cs-lines">
+
+					<div id="044cea8b-8583-4a92-ac80-b501604900c8" class="cs-line">
+						<div class="cs-boxes">
+
+							<div id="132aff80-0ab3-498a-9556-ec08ac7d2960" class="cs-box">
+								<div class="cs-widgets">
+
+									<div id="a225d493-024b-4907-943f-f5fb5cda5502"
+										class="cs-widget cs-image-widget">
+
+
+										<img class="cs-chosen-image"
+											src="https://yata.ostr.locaweb.com.br/eb79f8d40887549f4ebf712c3219e4256a6c7690d9c7e3431cda8ee00428a1c5"
+											title="cel.png" alt="cel.png" />
+
+
+
+									</div>
+
+
+									<div id="6674b030-9eeb-4be9-aa1b-9b7413dd02d9"
+										class="cs-widget cs-text-widget">
+
+										<div class="text-editor">
+											<p style="text-align: center">
+												<span style="color: #ffffff">+55 11 2385-7850</span>
+											</p>
+
+										</div>
+
+
+									</div>
+
+
+								</div>
+							</div>
+
+
+							<div id="d59b4f76-e747-41c9-baa6-bbd1ae3101c8" class="cs-box">
+								<div class="cs-widgets">
+
+									<div id="f34caa5a-e032-4f71-8602-be8bbd044e42"
+										class="cs-widget cs-image-widget">
+
+
+										<img class="cs-chosen-image"
+											src="https://yata.ostr.locaweb.com.br/a93732c19f18af97385421172c9374088a7d482a0bdaf02e2e20e60ee6bb5481"
+											title="email.png" alt="email.png" />
+
+
+
+									</div>
+
+
+									<div id="ba26f117-16f3-4521-b8f3-8e88d66cbb8f"
+										class="cs-widget cs-text-widget">
+
+										<div class="text-editor">
+											<p style="text-align: center">
+												<span style="color: #ffffff">vendas@consultsoftware.com.br</span>
+											</p>
+
+										</div>
+
+
+									</div>
+
+
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+
+		<footer id="69b2116c-b149-40ef-a9d2-610b5b8f19ab"
+			class="cs-section cs-section-full cs-section-vertical">
+			<div class="cs-section-inner">
+				<div class="cs-lines">
+
+					<div id="97795f4c-d74e-4ccd-8719-ffd960c426ef" class="cs-line">
+						<div class="cs-boxes">
+
+							<div id="e2ffbdfb-dbfd-4bac-b53e-bd9f7f7f335d" class="cs-box">
+								<div class="cs-widgets"></div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+					<div id="724fab21-cb45-42d3-b8b6-992fe97f4a50" class="cs-line">
+						<div class="cs-boxes">
+
+							<div id="439f8578-9251-4cd0-b793-d9ccd6f07bb3" class="cs-box">
+								<div class="cs-widgets"></div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+					<div id="0097a4a2-8de5-495e-88ce-fbd4c431f2d4" class="cs-line">
+						<div class="cs-boxes">
+
+							<div id="ab815127-95e6-4062-9573-d3d745f89721" class="cs-box">
+								<div class="cs-widgets">
+
+									<div id="96e322a2-70cb-43f8-a08e-0115bafa9d9a"
+										class="cs-widget cs-text-widget">
+
+										<div class="text-editor">
+											<p style="text-align: center">
+												<span style="font-size: 12px"><span
+													style="color: #696969">CONSULTSOFTWARE &copy; 2018</span></span>
+											</p>
+
+										</div>
+
+
+									</div>
+
+
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="/assets/criadordesites.js?55963d1d-22e9-4ec2-ab22-cfbc09bf0145"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>sample-security-servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>/pages/index.html</welcome-file>
+  </welcome-file-list>
+  <servlet-mapping>
+    <servlet-name>SignStep1</servlet-name>
+    <url-pattern>/SignStep1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignStep2</servlet-name>
+    <url-pattern>/SignStep2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignStep3</servlet-name>
+    <url-pattern>/SignStep3</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+</web-app>
